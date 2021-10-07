@@ -1,8 +1,9 @@
-const express =require('express');
-const app=express();
-const mongoose=require('mongoose');
-const path=require('path');
-const ejsMate=require('ejs-mate');
+const express = require('express');
+const app = express();
+const mongoose = require('mongoose');
+const path = require('path');
+const ejsMate = require('ejs-mate');
+const relearnRouter = require('./routes/relearn');
 
 
 app.engine('ejs', ejsMate);
@@ -11,11 +12,13 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-app.get('/', (req,res)=>{
-    res.send("Working so far");
+app.use((req, res, next) => {
+    res.locals.url = req.url;
+    next();
 })
 
-app.listen(3000, ()=>{
+app.use('/relearn', relearnRouter);
+
+app.listen(3000, () => {
     console.log("Listening on port 3000!");
 })
