@@ -15,7 +15,8 @@
     <style>
         @media (max-width: 1000px) {
             a.navbar-brand.brand {
-                margin: 0 0 0 0.40em !important;
+                width: 50% !important;
+                margin: 0 0.40rem 0 0 !important;
             }
         }
     </style>
@@ -26,36 +27,30 @@
         <main>
             <%- body %>
         </main>
-        <% if (url==="/relearn" || url==="/relearn/" ) { %>
-            <%- include('../partials/courses') %>
-                <%- include('../partials/feature') %>
-                    <%- include('../partials/about') %>
-                        <% } %>
-                            <%- include('../partials/footer') %>
-                                <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
-                                    integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
-                                    crossorigin="anonymous"></script>
-                                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-                                    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-                                    crossorigin="anonymous"></script>
-                                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js"
-                                    integrity="sha384-PsUw7Xwds7x08Ew3exXhqzbhuEYmA2xnwc8BuD6SEr+UmEHlX8/MCltYEodzWA4u"
-                                    crossorigin="anonymous"></script>
-                                <script src="/js/aos.js"></script>
-                                <script>
-                                    AOS.init({
-                                        offset: 300,
-                                        duration: 1000
-                                    });
-                                </script>
-                                <script>
-                                    $(function () {
-                                        $(document).scroll(function () {
-                                            var $nav = $("#main-nav");
-                                            $nav.toggleClass("scroll", $(this).scrollTop() > $nav.height());
-                                        });
-                                    });
-                                </script>
+        <%- include('../partials/footer') %>
+            <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+                integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+                integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js"
+                integrity="sha384-PsUw7Xwds7x08Ew3exXhqzbhuEYmA2xnwc8BuD6SEr+UmEHlX8/MCltYEodzWA4u"
+                crossorigin="anonymous"></script>
+            <script src="/js/aos.js"></script>
+            <script>
+                AOS.init({
+                    offset: 300,
+                    duration: 1000
+                });
+            </script>
+            <script>
+                $(function () {
+                    $(document).scroll(function () {
+                        var $nav = $("#main-nav");
+                        $nav.toggleClass("scroll", $(this).scrollTop() > $nav.height());
+                    });
+                });
+            </script>
 </body>
 
 </html>
