@@ -5,3 +5,6 @@ module.exports.index = (req, res) => {
 module.exports.courses = (req, res) => {
     res.render('relearn/courses');
 }
+module.exports.about = (req, res) => {
+    res.render('relearn/about');
+}
