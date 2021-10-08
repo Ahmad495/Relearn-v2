@@ -391,6 +391,38 @@ section .hero-heading .hero-btn{
   }
   /* ABOUT US SECTION*/
 
+
+  .php-email-form {
+    background: #dadff9;
+    padding: 30px;
+    height: 100%;
+    border-radius: 1em;
+    }
+    .info-box{
+    background: #dadff9;
+    padding: 30px;
+    height: 100%;
+    border-radius: 1em;
+    font-size: small;
+    color: #012970;
+    }
+    .info-box h3{
+    font-size: large;
+    font-weight: 700;
+    }
+    .info-box i{
+    color: #4154f1;
+    margin-bottom: 0.5em;
+    }
+    .contact-btn a{
+    padding: 0.5em 2.5em;
+    }
+    @media (max-width:999px){
+    .php-email-form{
+      margin-top: 1em;
+    }
+    }
+
 /*FOOTER STYLE START*/
 
 .footer {
