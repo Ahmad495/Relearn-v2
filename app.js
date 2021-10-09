@@ -5,6 +5,18 @@ const path = require('path');
 const ejsMate = require('ejs-mate');
 const relearnRouter = require('./routes/relearn');
 
+mongoose.connect('mongodb://localhost:27017/relearn', {
+    useNewUrlParser: true,
+    // useCreateIndex: true,
+    useUnifiedTopology: true
+});
+
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", () => {
+    console.log("Database connected");
+});
+
 
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
@@ -15,7 +27,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
     res.locals.address = req.url;
-    // console.log(address);
     next();
 })
 
