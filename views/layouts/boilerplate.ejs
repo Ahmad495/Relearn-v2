@@ -10,6 +10,7 @@
         integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
     <link rel="stylesheet" href="/js/aos.css">
     <link rel="shortcut icon" href="/images/favicon-16x16.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/register.css">
     <link rel="stylesheet" href="/css/app.css">
     <title>Relearn</title>
     <style>
@@ -23,35 +24,47 @@
 </head>
 
 <body>
-    <%- include('../partials/navbar') %>
-        <%- include('../partials/hero') %>
-            <main>
-                <%- body %>
-            </main>
-            <%- include('../partials/footer') %>
-                <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
-                    integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
-                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-                    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-                    crossorigin="anonymous"></script>
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js"
-                    integrity="sha384-PsUw7Xwds7x08Ew3exXhqzbhuEYmA2xnwc8BuD6SEr+UmEHlX8/MCltYEodzWA4u"
-                    crossorigin="anonymous"></script>
-                <script src="/js/aos.js"></script>
-                <script>
-                    AOS.init({
-                        offset: 300,
-                        duration: 1000
-                    });
-                </script>
-                <script>
-                    $(function () {
-                        $(document).scroll(function () {
-                            var $nav = $("#main-nav");
-                            $nav.toggleClass("scroll", $(this).scrollTop() > $nav.height());
-                        });
-                    });
-                </script>
+    <%= console.log(address) %>
+        <% if (address!=="/relearn/signUp" ) { %>
+            <% if (address!=="/relearn/signIn" ) { %>
+                <%- include('../partials/navbar') %>
+                    <%- include('../partials/hero') %>
+                        <% } %>
+                            <% } %>
+                                <main>
+                                    <%- body %>
+                                </main>
+                                <% if (address!=="/relearn/signUp" ) { %>
+                                    <% if (address!=="/relearn/signIn" ) { %>
+                                        <%- include('../partials/footer') %>
+                                            <% } %>
+                                                <% } %>
+                                                    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+                                                        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+                                                        crossorigin="anonymous"></script>
+                                                    <script
+                                                        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+                                                        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+                                                        crossorigin="anonymous"></script>
+                                                    <script
+                                                        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js"
+                                                        integrity="sha384-PsUw7Xwds7x08Ew3exXhqzbhuEYmA2xnwc8BuD6SEr+UmEHlX8/MCltYEodzWA4u"
+                                                        crossorigin="anonymous"></script>
+                                                    <script src="/js/aos.js"></script>
+                                                    <script>
+                                                        AOS.init({
+                                                            offset: 300,
+                                                            duration: 1000
+                                                        });
+                                                    </script>
+                                                    <script>
+                                                        $(function () {
+                                                            $(document).scroll(function () {
+                                                                var $nav = $("#main-nav");
+                                                                $nav.toggleClass("scroll", $(this).scrollTop() > $nav.height());
+                                                            });
+                                                        });
+                                                    </script>
 </body>
 
 </html>

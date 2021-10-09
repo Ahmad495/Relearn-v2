@@ -6,5 +6,7 @@ router.get('/', relearnController.index);
 router.get('/courses', relearnController.courses);
 router.get('/about', relearnController.about);
 router.get('/contact', relearnController.contact);
+router.get('/signUp', relearnController.signUp);
+router.get('/signIn', relearnController.signIn);
 
 module.exports = router;
