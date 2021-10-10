@@ -6,15 +6,15 @@
                     <div class="card border-0 shadow rounded-3 my-5">
                         <div class="card-body p-4 p-sm-5">
                             <h5 class="card-title text-center mb-5 fw-bolder fs-5">Sign In</h5>
-                            <form>
+                            <form action="/user/signIn" method="post" class="needs-validation" novalidate>
                                 <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="floatingInput"
-                                        placeholder="name@example.com">
-                                    <label for="floatingInput">Email address</label>
+                                    <input type="text" class="form-control" name="username" id="floatingInput"
+                                        placeholder="name@example.com" required>
+                                    <label for="floatingInput">Username</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="password" class="form-control" id="floatingPassword"
-                                        placeholder="Password">
+                                    <input type="password" class="form-control" name="password" id="floatingPassword"
+                                        placeholder="Password" required>
                                     <label for="floatingPassword">Password</label>
                                 </div>
 
@@ -22,9 +22,9 @@
 
                                 <a class="d-block text-center mt-2 small" href="#">Forget Password</a>
 
-                                <a class="d-block text-center mt-2 small" href="/relearn/signUp">Don't have an account?
+                                <a class="d-block text-center mt-2 small" href="/user/signUp">Don't have an account?
                                     Sign
-                                    Un</a>
+                                    Up</a>
                                 <hr class="my-4">
 
                                 <div class="d-grid">

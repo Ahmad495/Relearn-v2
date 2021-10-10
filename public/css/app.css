@@ -3,7 +3,6 @@ body{
     padding: 0;
     box-sizing: border-box;
 }
-
 ::-webkit-scrollbar{
   width: 0.5rem;
   border-radius: 1rem;
