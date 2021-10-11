@@ -20,12 +20,61 @@ body{
   padding: 0.75rem 1rem;
 }
 
-.btn-google {
-  color: white !important;
-  background-color: #ea4335;
+.form-floating{
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
 }
 
-.btn-facebook {
-  color: white !important;
-  background-color: #3b5998;
+.form-floating i{
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  visibility: hidden;
+}
+
+.form-floating small{
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.form-floating input{
+  padding: 0.5rem 0.5rem !important;
+  border: 2.5px solid #f0f0f0;
+}
+.form-floating select{
+  padding: 0.5rem 0.5rem !important;
+  border: 2.5px solid #f0f0f0;
+}
+
+.form-floating.success i.fa-check-circle{
+  visibility: visible;
+  color: #2ecc71;
+}
+
+.form-floating.error i.fa-exclamation-circle{
+  visibility: visible;
+  color: #dd0404;
+}
+
+.form-floating.error small{
+  visibility: visible;
+  color: #dd0404;
+}
+
+.form-floating.success input{
+  border-color: #2ecc71;
+}
+
+.form-floating.error input{
+  border-color: #dd0404;
+}
+.form-floating.success select{
+  border-color: #2ecc71;
+}
+
+.form-floating.error select{
+  border-color: #dd0404;
 }
