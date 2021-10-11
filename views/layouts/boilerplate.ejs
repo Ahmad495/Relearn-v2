@@ -10,17 +10,19 @@
         integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
     <link rel="stylesheet" href="/js/aos.css">
     <link rel="shortcut icon" href="/images/favicon-16x16.png" type="image/x-icon">
-    <link rel="stylesheet" href="/css/register.css">
-    <link rel="stylesheet" href="/css/app.css">
-    <title>Relearn</title>
-    <style>
-        @media (max-width: 1000px) {
-            a.navbar-brand.brand {
-                width: 50% !important;
-                margin: 0 0.40rem 0 0 !important;
-            }
-        }
-    </style>
+    <% if (address==="/user/signUp" ||address==="/user/signIn" ) { %>
+        <link rel="stylesheet" href="/css/register.css">
+        <% }%>
+            <link rel="stylesheet" href="/css/app.css">
+            <title>Relearn</title>
+            <style>
+                @media (max-width: 1000px) {
+                    a.navbar-brand.brand {
+                        width: 50% !important;
+                        margin: 0 0.40rem 0 0 !important;
+                    }
+                }
+            </style>
 </head>
 
 <body>
