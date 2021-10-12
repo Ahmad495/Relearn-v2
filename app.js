@@ -13,6 +13,7 @@ const User = require('./models/user');
 
 const relearnRouter = require('./routes/relearn');
 const userRouter = require('./routes/users');
+const dashboardRouter = require('./routes/dashboard');
 
 mongoose.connect('mongodb://localhost:27017/relearn', {
     useNewUrlParser: true,
@@ -67,6 +68,7 @@ app.use((req, res, next) => {
 
 app.use('/relearn', relearnRouter);
 app.use('/user', userRouter);
+app.use('/dashboard', dashboardRouter);
 
 app.all('*', (req, res, next) => {
     next(new ExpressError(404, 'Page Not found'));
