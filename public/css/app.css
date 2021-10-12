@@ -34,7 +34,10 @@ body{
   letter-spacing: 1px;
 }
 #nav-links li{
-    margin-right: 3em;
+    margin-right: 3rem;
+}
+#login-dropdown li{
+  margin-right: 0;
 }
 #nav-links li button{
     padding: .3em 2em;
