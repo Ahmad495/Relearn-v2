@@ -1,4 +1,5 @@
 const ExpressError = require('./utils/ExpressError');
+const { addCoursesValidation } = require('./serverSideValidation');
 
 module.exports.isLoggedInTeacher = (req, res, next) => {
     if (!req.isAuthenticated()) {
@@ -8,4 +9,13 @@ module.exports.isLoggedInTeacher = (req, res, next) => {
         return res.redirect('/dashboard/studentDashboard');
     }
     next();
+}
+module.exports.validateCourse = (req, res, next) => {
+    const { error } = addCoursesValidation.validate(req.body);
+    if (error) {
+        const msg = error.details.map(el => el.message).join(',');
+        throw new ExpressError(404, msg);
+    } else {
+        next();
+    }
 }
