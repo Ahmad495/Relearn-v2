@@ -1,8 +1,10 @@
 const Course = require('../models/courses');
 const { cloudinary } = require('../cloudinary');
 
-module.exports.teacherDashboard = (req, res) => {
-    res.render('dashboard/teacherDashboard');
+module.exports.teacherDashboard = async (req, res) => {
+    const teacherId = req.user._id;
+    const courses = await Course.find({ teacherRef: teacherId });
+    res.render('dashboard/teacherDashboard', { courses });
 }
 module.exports.studentDashboard = (req, res) => {
     res.render('dashboard/studentDashboard');
