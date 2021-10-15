@@ -1,5 +1,8 @@
-module.exports.index = (req, res) => {
-    res.render('relearn/index');
+const Course = require('../models/courses');
+
+module.exports.index = async (req, res) => {
+    const courses = await Course.find({});
+    res.render('relearn/index', { courses });
 }
 module.exports.courses = (req, res) => {
     res.render('relearn/courses');

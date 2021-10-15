@@ -9,3 +9,10 @@ module.exports.userRegisterValidation = joi.object({
         passwordCheck: joi.string().required()
     }).required()
 })
+
+module.exports.addCoursesValidation = joi.object({
+    course: joi.object({
+        courseTitle: joi.string().required(),
+        courseDescription: joi.string().required()
+    })
+})
