@@ -25,6 +25,6 @@ module.exports.createCourse = async (req, res) => {
 }
 module.exports.renderCourseEditForm = async (req, res) => {
     const { id } = req.params;
-    const course = await Course.findById(id).populate('teacherRef');
-    res.send({ course });
+    const course = await Course.findById(id);
+    res.render('dashboard/editCourse', { course });
 }

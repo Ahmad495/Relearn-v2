@@ -53,7 +53,8 @@
                                                 <label for="courseTitle" class="form-label fw-bolder">course
                                                     Title</label>
                                                 <input type="text" class="form-control" name="course[courseTitle]"
-                                                    id="courseTitle" placeholder="Course Title" required>
+                                                    id="courseTitle" placeholder="Course Title"
+                                                    value="<%= course.courseTitle %>" required>
                                                 <div class="valid-feedback">
                                                     Looks good!
                                                 </div>
@@ -78,7 +79,8 @@
                                                     class="form-label fw-bolder">Description</label>
                                                 <textarea class="form-control" name="course[courseDescription]"
                                                     placeholder="Leave a Description here" id="courseDescription"
-                                                    style="height: 100px" required></textarea>
+                                                    style="height: 100px"
+                                                    required><%= course.courseDescription %> </textarea>
                                                 <div class="valid-feedback">
                                                     Looks good!
                                                 </div>
