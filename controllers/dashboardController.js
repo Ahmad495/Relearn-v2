@@ -1,4 +1,6 @@
 const Course = require('../models/courses');
+const User = require('../models/user');
+
 const { cloudinary } = require('../cloudinary');
 
 module.exports.teacherDashboard = async (req, res) => {
@@ -20,4 +22,9 @@ module.exports.createCourse = async (req, res) => {
     await course.save();
     req.flash('success', 'Course has been added');
     res.redirect('/dashboard/teacherDashboard');
+}
+module.exports.renderCourseEditForm = async (req, res) => {
+    const { id } = req.params;
+    const course = await Course.findById(id).populate('teacherRef');
+    res.send({ course });
 }

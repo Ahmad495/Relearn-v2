@@ -26,7 +26,7 @@
                             </div>
                             <div class="col-xl-4 col-md-6">
                                 <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body"><i class="fas fa-copy fa-5x"></i> Courses </div>
+                                    <div class="card-body"><i class="fas fa-copy fa-5x"></i> Add Courses </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="/dashboard/addCourses">View
                                             Details</a>
@@ -55,6 +55,7 @@
                                                 <th scope="col">Course Title</th>
                                                 <th scope="col">Course Description</th>
                                                 <th scope="col">Course Image</th>
+                                                <th scope="col">Edit Course</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -66,7 +67,11 @@
                                                     <td>
                                                         <%= course.courseDescription %>
                                                     </td>
-                                                    <td>@<%= course.courseImage.filename %>
+                                                    <td>
+                                                        <%= course.courseImage.filename %>
+                                                    </td>
+                                                    <td><a href="/dashboard/<%= course._id%>/edit"
+                                                            class="btn btn-sm btn-primary" type="button">Edit</a>
                                                     </td>
                                                 </tr>
                                                 <% } %>
