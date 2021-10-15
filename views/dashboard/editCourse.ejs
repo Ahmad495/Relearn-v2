@@ -1,0 +1,113 @@
+<% layout('layouts/dashboardBoilerplate') %>
+    <div id="layoutSidenav">
+        <%- include('../partials/sidebar') %>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Edit Course</h1>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active">
+                                <i class="fas fa-file"></i>
+                                Edit Course
+                            </li>
+                        </ol>
+                        <div class="row">
+                            <div class="col-xl-4 col-md-6">
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body">
+                                        <i class="fas fa-comments fa-5x"></i> Chat Rooms <span
+                                            class="badge bg-secondary bg-dark"></span>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6">
+                                <div class="card bg-warning text-white mb-4">
+                                    <div class="card-body"><i class="fas fa-copy fa-5x"></i>Add Courses </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6">
+                                <div class="card bg-danger text-white mb-4">
+                                    <div class="card-body"><i class="fas fa-photo-video fa-5x"></i> Videos </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <form action="#" method="post" enctype="multipart/form-data"
+                                        class="needs-validation addCourse my-5" novalidate>
+                                        <h2 class="text-center fw-bolder mb-5">Course Info</h2>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="courseTitle" class="form-label fw-bolder">course
+                                                    Title</label>
+                                                <input type="text" class="form-control" name="course[courseTitle]"
+                                                    id="courseTitle" placeholder="Course Title" required>
+                                                <div class="valid-feedback">
+                                                    Looks good!
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    Please enter a course title.
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="courseImage" class="form-label fw-bolder">course
+                                                    Image</label>
+                                                <input type="file" class="form-control" name="course[image]"
+                                                    id="courseImage" placeholder="Course Image" required>
+                                                <div class="valid-feedback">
+                                                    Looks good!
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    Please enter a course image.
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 mb-3">
+                                                <label for="courseDescription"
+                                                    class="form-label fw-bolder">Description</label>
+                                                <textarea class="form-control" name="course[courseDescription]"
+                                                    placeholder="Leave a Description here" id="courseDescription"
+                                                    style="height: 100px" required></textarea>
+                                                <div class="valid-feedback">
+                                                    Looks good!
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    Please enter a course description.
+                                                </div>
+                                            </div>
+                                            <div class="d-grid mb-3">
+                                                <button class="btn btn-primary btn-login fw-bold text-uppercase"
+                                                    type="submit">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Your Website 2021</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+    </div>
