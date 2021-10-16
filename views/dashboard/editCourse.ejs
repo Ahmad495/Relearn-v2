@@ -45,11 +45,11 @@
                             <hr>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <form action="#" method="post" enctype="multipart/form-data"
-                                        class="needs-validation addCourse my-5" novalidate>
+                                    <form action="/dashboard/courses/<%= course._id %>?_method=PUT" method="post"
+                                        class="addCourse my-5" novalidate>
                                         <h2 class="text-center fw-bolder mb-5">Course Info</h2>
                                         <div class="row">
-                                            <div class="col-md-6 mb-3">
+                                            <div class="col-md-12 mb-3">
                                                 <label for="courseTitle" class="form-label fw-bolder">course
                                                     Title</label>
                                                 <input type="text" class="form-control" name="course[courseTitle]"
@@ -60,18 +60,6 @@
                                                 </div>
                                                 <div class="invalid-feedback">
                                                     Please enter a course title.
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 mb-3">
-                                                <label for="courseImage" class="form-label fw-bolder">course
-                                                    Image</label>
-                                                <input type="file" class="form-control" name="course[image]"
-                                                    id="courseImage" placeholder="Course Image" required>
-                                                <div class="valid-feedback">
-                                                    Looks good!
-                                                </div>
-                                                <div class="invalid-feedback">
-                                                    Please enter a course image.
                                                 </div>
                                             </div>
                                             <div class="col-md-12 mb-3">

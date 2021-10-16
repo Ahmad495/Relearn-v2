@@ -25,23 +25,31 @@
                 <div class="col-lg-12 about-heading d-flex justify-content-center mb-5">
                     <h1>COURSES:</h1>
                 </div>
-                <% for( let course of courses ) { %>
-                    <div class="col-lg-4 col-md-6 mt-4">
-                        <div class="service-box" id="purple">
-                            <img src="<%= course.courseImage.url %> " class="img-fluid mb-5" alt="course-img"
-                                id="course-img-6">
-                            <h3>
-                                <%= course.courseTilte %>
-                            </h3>
-                            <p>
-                                <%= course.courseDescription %>
-                            </p>
-                            <div class="hero-btn">
-                                <a class="btn btn-primary px-4" href="/relearn/courses" role="button">Learn more</a>
+                <% if (courses) { %>
+                    <% for( let course of courses ) { %>
+                        <div class="col-lg-4 col-md-6 mt-4">
+                            <div class="service-box" id="purple">
+                                <img src="<%= course.courseImage.url %> " class="img-fluid mb-5" alt="course-img"
+                                    id="course-img-6">
+                                <h3>
+                                    <%= course.courseTitle %>
+                                </h3>
+                                <p>
+                                    <%= course.courseDescription %>
+                                </p>
+                                <div class="hero-btn">
+                                    <a class="btn btn-primary px-4" href="/relearn/courses" role="button">Learn
+                                        more</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <% } %>
+                        <% } %>
+                            <% } else {%>
+                                <div class="col-lg-12">
+                                    <h2 class="text-center fw-bolder">No Courses To Show</h2>
+                                </div>
+                                <% } %>
+
             </div>
         </div>
     </section>

@@ -13,6 +13,8 @@ router.get('/teacherDashboard', isLoggedInTeacher, catchAsync(dashboardControlle
 router.get('/studentDashboard', dashboardController.studentDashboard);
 router.get('/addCourses', isLoggedInTeacher, dashboardController.renderAddCourses);
 router.post('/addCourses', upload.single('course[image]'), validateCourse, dashboardController.createCourse);
-router.get('/:id/edit', isLoggedInTeacher, catchAsync(dashboardController.renderCourseEditForm));
+router.get('/courses/:id/edit', isLoggedInTeacher, catchAsync(dashboardController.renderCourseEditForm));
+router.delete('/courses/:id', isLoggedInTeacher, catchAsync(dashboardController.deleteCourse));
+router.put('/courses/:id', isLoggedInTeacher, catchAsync(dashboardController.editCourses));
 
 module.exports = router;

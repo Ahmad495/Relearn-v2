@@ -52,10 +52,11 @@
                                     <table class="table table-striped table-bordered">
                                         <thead class="table-dark">
                                             <tr>
-                                                <th scope="col">Course Title</th>
-                                                <th scope="col">Course Description</th>
-                                                <th scope="col">Course Image</th>
-                                                <th scope="col">Edit Course</th>
+                                                <th class="text-center fw-bolder">Course Title</th>
+                                                <th class="text-center fw-bolder">Course Description</th>
+                                                <th class="text-center fw-bolder">Course Image</th>
+                                                <th class="text-center fw-bolder">Edit Course</th>
+                                                <th class="text-center fw-bolder">Delete Course</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -70,8 +71,19 @@
                                                     <td>
                                                         <%= course.courseImage.filename %>
                                                     </td>
-                                                    <td><a href="/dashboard/<%= course._id%>/edit"
-                                                            class="btn btn-sm btn-primary" type="button">Edit</a>
+                                                    <td>
+                                                        <center><a href="/dashboard/courses/<%= course._id%>/edit"
+                                                                class="btn btn-sm btn-primary" type="button">Edit</a>
+                                                        </center>
+                                                    </td>
+                                                    <td>
+                                                        <form
+                                                            action="/dashboard/courses/<%= course._id %>?_method=DELETE"
+                                                            method="post">
+                                                            <center>
+                                                                <button class="btn btn-sm btn-danger">Delete</button>
+                                                            </center>
+                                                        </form>
                                                     </td>
                                                 </tr>
                                                 <% } %>
