@@ -40,7 +40,19 @@ module.exports.deleteCourse = async (req, res) => {
 }
 module.exports.editCourses = async (req, res) => {
     const { id } = req.params;
-    await Course.findByIdAndUpdate(id, { ...req.body.course });
-    req.flash('success', 'Course Updated!');
-    res.redirect('/dashboard/teacherDashboard');
+    if (!req.file) {
+        await Course.findByIdAndUpdate(id, { ...req.body.course });
+        req.flash('success', 'Course Updated!');
+        res.redirect('/dashboard/teacherDashboard');
+    } else {
+        const findCourse = await Course.findById(id);
+        if (findCourse.courseImage) {
+            cloudinary.uploader.destroy(findCourse.courseImage.filename);
+            findCourse.courseImage.url = req.file.path;
+            findCourse.courseImage.filename = req.file.filename;
+            await findCourse.save();
+            req.flash('success', 'Course Updated!');
+            res.redirect('/dashboard/teacherDashboard');
+        }
+    }
 }

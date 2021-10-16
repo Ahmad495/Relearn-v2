@@ -15,6 +15,6 @@ router.get('/addCourses', isLoggedInTeacher, dashboardController.renderAddCourse
 router.post('/addCourses', upload.single('course[image]'), validateCourse, dashboardController.createCourse);
 router.get('/courses/:id/edit', isLoggedInTeacher, catchAsync(dashboardController.renderCourseEditForm));
 router.delete('/courses/:id', isLoggedInTeacher, catchAsync(dashboardController.deleteCourse));
-router.put('/courses/:id', isLoggedInTeacher, catchAsync(dashboardController.editCourses));
+router.put('/courses/:id', upload.single('course[image]'), isLoggedInTeacher, catchAsync(dashboardController.editCourses));
 
 module.exports = router;
