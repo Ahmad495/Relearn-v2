@@ -53,6 +53,7 @@ module.exports.editCourses = async (req, res) => {
             await findCourse.save();
             req.flash('success', 'Course Updated!');
             res.redirect('/dashboard/teacherDashboard');
+
         }
     }
 }
