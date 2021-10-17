@@ -28,3 +28,32 @@ module.exports.renderCourseEditForm = async (req, res) => {
     const course = await Course.findById(id);
     res.render('dashboard/editCourse', { course });
 }
+module.exports.deleteCourse = async (req, res) => {
+    const { id } = req.params;
+    const findCourse = await Course.findById(id);
+    if (findCourse.courseImage) {
+        cloudinary.uploader.destroy(findCourse.courseImage.filename);
+    }
+    await Course.findByIdAndDelete(id);
+    req.flash('success', 'Course Deleted!');
+    res.redirect('/dashboard/teacherDashboard');
+}
+module.exports.editCourses = async (req, res) => {
+    const { id } = req.params;
+    if (!req.file) {
+        await Course.findByIdAndUpdate(id, { ...req.body.course });
+        req.flash('success', 'Course Updated!');
+        res.redirect('/dashboard/teacherDashboard');
+    } else {
+        const findCourse = await Course.findById(id);
+        if (findCourse.courseImage) {
+            cloudinary.uploader.destroy(findCourse.courseImage.filename);
+            findCourse.courseImage.url = req.file.path;
+            findCourse.courseImage.filename = req.file.filename;
+            await findCourse.save();
+            req.flash('success', 'Course Updated!');
+            res.redirect('/dashboard/teacherDashboard');
+
+        }
+    }
+}
