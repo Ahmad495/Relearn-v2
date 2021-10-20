@@ -16,3 +16,9 @@ module.exports.addCoursesValidation = joi.object({
         courseDescription: joi.string().required()
     })
 })
+module.exports.editCoursesValidation = joi.object({
+    course: joi.object({
+        courseTitle: joi.string().required(),
+        courseDescription: joi.string().required()
+    })
+})
