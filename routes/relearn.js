@@ -4,8 +4,9 @@ const relearnController = require('../controllers/relearnController');
 const catchAsync = require('../utils/catchAsync');
 
 router.get('/', catchAsync(relearnController.index));
-router.get('/courses', relearnController.courses);
+router.get('/courses', catchAsync(relearnController.courses));
 router.get('/about', relearnController.about);
 router.get('/contact', relearnController.contact);
+router.get('/videos/:id', catchAsync(relearnController.videos));
 
 module.exports = router;

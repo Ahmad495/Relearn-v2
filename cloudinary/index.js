@@ -7,7 +7,7 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_SECRET
 });
 
-const storage = new CloudinaryStorage({
+const storage1 = new CloudinaryStorage({
     cloudinary,
     params: {
         folder: 'relearn',
@@ -15,7 +15,17 @@ const storage = new CloudinaryStorage({
     }
 });
 
+const storage2 = new CloudinaryStorage({
+    cloudinary,
+    params: {
+        folder: 'relearn/videos',
+        allowedFormats: ['mp4', 'mkv'],
+        resource_type: 'auto'
+    }
+});
+
 module.exports = {
     cloudinary,
-    storage
+    storage1,
+    storage2
 }

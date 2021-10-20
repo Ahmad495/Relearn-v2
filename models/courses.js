@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const User = require('../models/user');
+const Video = require('../models/videos');
 
 // const imageSchema = new Schema({
 //     url: String,
@@ -28,6 +29,17 @@ const courseSchema = new Schema({
     },
     teacherRef: {
         type: Schema.Types.ObjectId, ref: 'User'
+    },
+    videoRef: [
+        {
+            type: Schema.Types.ObjectId, ref: 'Video'
+        }
+    ]
+});
+
+courseSchema.post('findOneAndDelete', async function (doc) {
+    if (doc) {
+        await Video.deleteMany({ _id: { $in: doc.videoRef } });
     }
 })
 
