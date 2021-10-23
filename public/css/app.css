@@ -224,6 +224,10 @@ section .hero-heading .hero-btn{
 
 
 /*courses section*/
+.video{
+  background-color: #dadff9;
+}
+
 .courses{
   margin-top: 10rem;
   overflow: hidden;

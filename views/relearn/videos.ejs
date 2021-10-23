@@ -22,8 +22,13 @@
     <section class="container">
         <div class="row">
             <% for( let video of courses.videoRef ) { %>
-                <div class="col-md-6">
-                    <video src="<%= video.videoFile.url %>" controls></video>
+                <div class="col-md-4 my-5">
+                    <div class="ratio ratio-21x9 p-5">
+                        <video src="<%= video.videoFile.url %>" controls style="border-radius: 1.5rem;"></video>
+                    </div>
+                    <h5 class="fw-bolder text-center mt-2">
+                        <%= video.videoTitle %>
+                    </h5>
                 </div>
                 <% } %>
         </div>
