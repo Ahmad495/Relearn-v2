@@ -30,7 +30,6 @@ db.once("open", () => {
     console.log("Database connected");
 });
 
-
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -41,7 +40,7 @@ app.use(methodOverride('_method'));
 
 const sessionConfig = {
     name: 'session',
-    secret: 'thisisnotagoodsecret',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
     cookie: {
